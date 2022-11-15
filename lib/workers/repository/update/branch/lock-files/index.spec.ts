@@ -29,7 +29,6 @@ const { writeUpdatedPackageFiles, getAdditionalFiles } = lockFiles;
 describe('workers/repository/update/branch/lock-files/index', () => {
   describe('writeUpdatedPackageFiles', () => {
     beforeEach(() => {
-      jest.resetAllMocks();
       GlobalConfig.set({
         localDir: 'some-tmp-dir',
       });
@@ -94,10 +93,6 @@ describe('workers/repository/update/branch/lock-files/index', () => {
       });
       jest.spyOn(lerna, 'generateLockFiles');
       jest.spyOn(lockFiles, 'determineLockFileDirs');
-    });
-
-    afterEach(() => {
-      jest.resetAllMocks();
     });
 
     it('returns no error and empty lockfiles if updateLockFiles false', async () => {

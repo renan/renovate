@@ -13,7 +13,6 @@ jest.mock('../../../util/git');
 let config: RenovateConfig;
 
 beforeEach(() => {
-  jest.resetAllMocks();
   config = getConfig();
   config.platform = 'github';
   config.errors = [];

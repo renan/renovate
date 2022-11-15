@@ -18,10 +18,6 @@ describe('workers/repository/update/branch/status-checks', () => {
       };
     });
 
-    afterEach(() => {
-      jest.resetAllMocks();
-    });
-
     it('returns if not configured', async () => {
       await setStability(config);
       expect(platform.getBranchStatusCheck).toHaveBeenCalledTimes(0);
@@ -58,10 +54,6 @@ describe('workers/repository/update/branch/status-checks', () => {
         ...getConfig(),
         branchName: 'renovate/some-branch',
       };
-    });
-
-    afterEach(() => {
-      jest.resetAllMocks();
     });
 
     it('returns if not configured', async () => {

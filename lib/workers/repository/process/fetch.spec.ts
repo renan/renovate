@@ -14,7 +14,6 @@ describe('workers/repository/process/fetch', () => {
     let config: RenovateConfig;
 
     beforeEach(() => {
-      jest.resetAllMocks();
       config = getConfig();
     });
 

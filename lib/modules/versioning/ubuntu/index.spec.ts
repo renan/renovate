@@ -4,10 +4,6 @@ import { api as ubuntu } from '.';
 describe('modules/versioning/ubuntu/index', () => {
   const dt = DateTime.fromISO('2022-04-20');
 
-  afterEach(() => {
-    jest.resetAllMocks();
-  });
-
   test.each`
     version        | expected
     ${undefined}   | ${false}

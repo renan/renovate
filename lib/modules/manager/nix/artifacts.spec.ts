@@ -39,7 +39,6 @@ const lockfileMaintenanceCmd = `nix \
 
 describe('modules/manager/nix/artifacts', () => {
   beforeEach(() => {
-    jest.resetAllMocks();
     env.getChildProcessEnv.mockReturnValue({
       ...envMock.basic,
       LANG: 'en_US.UTF-8',

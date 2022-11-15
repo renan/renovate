@@ -28,7 +28,6 @@ describe('modules/datasource/rubygems/index', () => {
     beforeEach(() => {
       resetCache();
       process.env.RENOVATE_SKIP_CACHE = 'true';
-      jest.resetAllMocks();
     });
 
     afterEach(() => {

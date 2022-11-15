@@ -11,7 +11,6 @@ import * as limits from './limits';
 let config: RenovateConfig;
 
 beforeEach(() => {
-  jest.resetAllMocks();
   config = getConfig();
 });
 

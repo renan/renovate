@@ -3,10 +3,6 @@ import { extractPackageFile } from '.';
 
 describe('modules/manager/helmfile/extract', () => {
   describe('extractPackageFile()', () => {
-    beforeEach(() => {
-      jest.resetAllMocks();
-    });
-
     it('returns null if no releases', () => {
       const content = `
       repositories:

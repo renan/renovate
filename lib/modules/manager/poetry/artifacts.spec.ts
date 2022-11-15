@@ -33,7 +33,6 @@ const config: UpdateArtifactsConfig = {};
 
 describe('modules/manager/poetry/artifacts', () => {
   beforeEach(() => {
-    jest.resetAllMocks();
     env.getChildProcessEnv.mockReturnValue(envMock.basic);
     GlobalConfig.set(adminConfig);
     docker.resetPrefetchedImages();

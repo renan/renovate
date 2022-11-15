@@ -20,7 +20,6 @@ describe('workers/repository/onboarding/branch/rebase', () => {
 
     beforeEach(() => {
       memCache.init();
-      jest.resetAllMocks();
       OnboardingState.prUpdateRequested = false;
       config = {
         ...getConfig(),

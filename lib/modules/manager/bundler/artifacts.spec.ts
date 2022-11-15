@@ -85,7 +85,6 @@ describe('modules/manager/bundler/artifacts', () => {
 
   describe('updateArtifacts', () => {
     beforeEach(() => {
-      jest.resetAllMocks();
       jest.resetModules();
 
       delete process.env.GEM_HOME;

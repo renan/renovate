@@ -43,7 +43,6 @@ describe('workers/repository/process/lookup/filter-checks', () => {
     config = getConfig();
     config.currentVersion = '1.0.0';
     sortedReleases = clone(releases);
-    jest.resetAllMocks();
     dateUtil.getElapsedDays.mockReturnValueOnce(3);
     dateUtil.getElapsedDays.mockReturnValueOnce(5);
     dateUtil.getElapsedDays.mockReturnValueOnce(7);

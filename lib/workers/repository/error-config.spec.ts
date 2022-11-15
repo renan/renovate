@@ -10,7 +10,6 @@ jest.mock('../../modules/platform');
 let config: RenovateConfig;
 
 beforeEach(() => {
-  jest.resetAllMocks();
   config = getConfig();
 });
 

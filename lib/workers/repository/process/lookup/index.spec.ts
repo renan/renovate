@@ -53,7 +53,6 @@ describe('workers/repository/process/lookup/index', () => {
 
   beforeEach(() => {
     // TODO: fix wrong tests
-    jest.resetAllMocks();
     // TODO: fix types #7154
     config = partial<LookupUpdateConfig>(getConfig() as never);
     config.manager = 'npm';

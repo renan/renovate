@@ -11,7 +11,6 @@ describe('workers/repository/update/pr/code-owners', () => {
     let pr: Pr;
 
     beforeEach(() => {
-      jest.resetAllMocks();
       pr = mock<Pr>();
     });
 

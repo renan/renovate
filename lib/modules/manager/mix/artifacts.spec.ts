@@ -26,7 +26,6 @@ const config: UpdateArtifactsConfig = {};
 
 describe('modules/manager/mix/artifacts', () => {
   beforeEach(() => {
-    jest.resetAllMocks();
     jest.resetModules();
 
     env.getChildProcessEnv.mockReturnValue(envMock.basic);
