@@ -5,7 +5,6 @@ import { logger } from '../../logger';
 import { ExternalHostError } from '../../types/errors/external-host-error';
 import * as memCache from '../../util/cache/memory';
 import * as packageCache from '../../util/cache/package';
-import { clone } from '../../util/clone';
 import { regEx } from '../../util/regex';
 import { trimTrailingSlash } from '../../util/url';
 import * as allVersioning from '../versioning';
@@ -352,9 +351,9 @@ export async function getPkgReleases(
     logger.error({ config }, 'Datasource getReleases without packageName');
     return null;
   }
-  let res: ReleaseResult;
+  let res: ReleaseResult | null;
   try {
-    res = clone(
+    res = structuredClone(
       await getRawReleases({
         ...config,
         packageName,
@@ -396,7 +395,7 @@ export async function getPkgReleases(
   // Filter versions for uniqueness
   res.releases = res.releases.filter(
     (filterRelease, filterIndex) =>
-      res.releases.findIndex(
+      res?.releases.findIndex(
         (findRelease) => findRelease.version === filterRelease.version
       ) === filterIndex
   );

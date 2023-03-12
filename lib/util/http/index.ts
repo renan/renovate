@@ -7,7 +7,6 @@ import { pkg } from '../../expose.cjs';
 import { logger } from '../../logger';
 import { ExternalHostError } from '../../types/errors/external-host-error';
 import * as memCache from '../cache/memory';
-import { clone } from '../clone';
 import { match } from '../schema';
 import { resolveBaseUrl } from '../url';
 import { applyAuthorization, removeAuthorization } from './auth';
@@ -44,8 +43,9 @@ function cloneResponse<T extends Buffer | string | any>(
   // Don't use json clone for buffers
   return {
     statusCode,
-    body: body instanceof Buffer ? (body.slice() as T) : clone<T>(body),
-    headers: clone(headers),
+    body:
+      body instanceof Buffer ? (body.slice() as T) : structuredClone<T>(body),
+    headers: structuredClone(headers),
     authorization: !!response.authorization,
   };
 }
