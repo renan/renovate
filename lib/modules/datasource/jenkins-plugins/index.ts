@@ -1,5 +1,6 @@
 import { logger } from '../../../logger';
 import { cache } from '../../../util/cache/package/decorator';
+import { clone } from '../../../util/clone';
 import { Datasource } from '../datasource';
 import type { GetReleasesConfig, Release, ReleaseResult } from '../types';
 import type {
@@ -35,7 +36,7 @@ export class JenkinsPluginsDatasource extends Datasource {
     const result = structuredClone(plugin);
     const versions = await this.getJenkinsPluginVersions();
     const releases = versions[packageName];
-    result.releases = releases ? structuredClone(releases) : [];
+    result.releases = releases ? clone(releases) : [];
     return result;
   }
 
