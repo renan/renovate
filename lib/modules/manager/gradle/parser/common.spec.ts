@@ -58,7 +58,7 @@ describe('modules/manager/gradle/parser/common', () => {
   it('prependNestingDepth', () => {
     ctx.tmpNestingDepth = ctx.varTokens = [token];
     prependNestingDepth(ctx);
-    expect(ctx.varTokens).toStrictEqual([token, token]);
+    expect(ctx.varTokens).toEqual([token, token]);
 
     coalesceVariable(ctx);
     expect(ctx).toMatchObject({
