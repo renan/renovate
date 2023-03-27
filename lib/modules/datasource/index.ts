@@ -352,7 +352,7 @@ export async function getPkgReleases(
     logger.error({ config }, 'Datasource getReleases without packageName');
     return null;
   }
-  let res: ReleaseResult | null;
+  let res: ReleaseResult;
   try {
     res = clone(
       await getRawReleases({
@@ -396,7 +396,7 @@ export async function getPkgReleases(
   // Filter versions for uniqueness
   res.releases = res.releases.filter(
     (filterRelease, filterIndex) =>
-      res?.releases.findIndex(
+      res.releases.findIndex(
         (findRelease) => findRelease.version === filterRelease.version
       ) === filterIndex
   );
