@@ -111,6 +111,7 @@ const repoGroups = {
   Hangfire: 'https://github.com/HangfireIO/Hangfire',
   hotchocolate: 'https://github.com/ChilliCream/hotchocolate',
   'infrastructure-ui': 'https://github.com/instructure/instructure-ui',
+  ionic: 'https://github.com/ionic-team/ionic-framework',
   'ionic-native': 'https://github.com/ionic-team/ionic-native',
   istanbuljs: 'https://github.com/istanbuljs/istanbuljs',
   jasmine: 'https://github.com/jasmine/jasmine',
